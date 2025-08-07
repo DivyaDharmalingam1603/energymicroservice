@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: energymicroservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: energymicroservice
+  template:
+    metadata:
+      labels:
+        app: energymicroservice
+    spec:
+      containers:
+        - name: energylegacyapp
+          image: 148336247604.dkr.ecr.us-east-1.amazonaws.com/energymicroservice:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Development

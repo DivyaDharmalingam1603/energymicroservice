@@ -1,0 +1,6 @@
+@EnergyLegacyApp.Business_HostAddress = http://localhost:5022
+
+GET {{EnergyLegacyApp.Business_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
